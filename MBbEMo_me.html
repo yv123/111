@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .loader{
+            width: calc(1em*7  +  0.15em * 6 );
+            height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+        }
+        .loader span{
+            width: 1em;
+            height: 100%;
+            display: inline-block;
+            border-radius: 0.1em;
+            background-color: deepskyblue;
+        }
+        .loader span{
+            animation: animate 0.8s infinite alternate;
+            transform: skew(-25deg) scale(0.1);
+            filter: opacity(0);
+        }
+        .loader span{
+            animation-delay: calc((var(--n) - 1) * 0.2s);
+        }
+        .loader span:nth-child(1){
+            --n:1
+        }
+        .loader span:nth-child(2){
+            --n:2
+        }
+        .loader span:nth-child(3){
+            --n:3
+        }
+        .loader span:nth-child(4){
+            --n:4
+        }
+        .loader span:nth-child(5){
+            --n:5
+        }
+        .loader span:nth-child(6){
+            --n:6
+        }
+        .loader span:nth-child(7){
+            --n:7
+        }
+        @keyframes animate {
+            to{
+                filter: opacity(1);
+                transform: skewX(-25deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--生成7个pan-->
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

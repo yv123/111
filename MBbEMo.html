@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(midnightblue, black);
+        }
+        .loader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 1.5em;
+            font-size: 20px;
+            width: calc(1em*7 + 0.15em*6);
+        }
+        .loader span {
+            width: 1em;
+            height: 100%;
+            display: inline-block;
+            background-color: deepskyblue;
+            border-radius: 0.1em;
+        }
+        .loader span{
+            transform: skew(-25deg) scale(0.1);
+        }
+        .loader span{
+            animation: animate 0.8s infinite alternate;
+            filter: opacity(0);
+        }
+        @keyframes animate {
+            to{
+                filter: opacity(1);
+                transform: skew(-25deg) scale(1);
+            }
+        }
+        /*设置动画延迟*/
+        .loader span{
+            animation-delay:calc((var(--n) - 1) * 0.2s);
+        }
+        .loader span:nth-child(1) {
+            --n: 1;
+        }
+
+        .loader span:nth-child(2) {
+            --n: 2;
+        }
+
+        .loader span:nth-child(3) {
+            --n: 3;
+        }
+
+        .loader span:nth-child(4) {
+            --n: 4;
+        }
+
+        .loader span:nth-child(5) {
+            --n: 5;
+        }
+
+        .loader span:nth-child(6) {
+            --n: 6;
+        }
+
+        .loader span:nth-child(7) {
+            --n: 7;
+        }
+    </style>
+</head>
+<body>
+    <!--创建一个大盒子-->
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
